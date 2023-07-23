@@ -1,0 +1,21 @@
+:root {
+    --primary: #E5EDDE;
+    --secondary: #AF4E5A;
+    --success: #6f9049;
+    --info: #2b101e;
+    --warning: #ec7f11;
+    --danger: #f44336;
+    --light: #E5EDDE;
+    --dark: #32011E;
+}
+
+.custprimary{
+    background-color: var(--primary);
+        color: var(--dark);
+}
+
+.custsecondary{
+    background-color: var(--secondary);
+        color: var(--light);
+}
+

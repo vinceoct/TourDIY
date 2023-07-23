@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+.header{
+    height: 8vh;
+}
+.navbar{
+    height: 100%;        
+}
+
+.nav-link{
+    color: #F4F3F1;
+}
+.nav-link:hover{
+    color: #BC915F;
+    font-weight: 500;
+}
+
+.navbar-brand{
+    color: #F4F3F1;
+    font-size: 25px;   
+    font-family: Fjalla One;
+}
+.navbar-brand:hover {
+    color: #BC915F;
+}
+
+.btn{
+    margin: 3px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 200;
+} 
+
+.btn:hover{
+    background-color: #BC915F;
+    border: none;
+}
