@@ -1,8 +1,27 @@
 
 .main{
-    height: 87vh; 
+    height: 100vh; 
 }
 
 .homeCard{
-    color: #E5EDDE;
+    color: var(--light);
+}
+
+.section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000
+}
+
+#signup, #login, #bands{
+    background: linear-gradient(225deg, #838c93, #9ca7ae);
+    color: var(--dark);
+}
+
+#venues {
+    background: linear-gradient(225deg, #2e2447, #372b55);
+    color: var(--light);
 }

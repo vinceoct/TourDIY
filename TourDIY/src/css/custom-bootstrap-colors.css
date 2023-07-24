@@ -1,12 +1,12 @@
 :root {
-    --primary: #E5EDDE;
-    --secondary: #AF4E5A;
-    --success: #6f9049;
+    --primary: #929ca3;
+    --secondary: #020202;
+    --success: #61ab71;
     --info: #2b101e;
-    --warning: #ec7f11;
+    --warning: #de9b39;
     --danger: #f44336;
-    --light: #E5EDDE;
-    --dark: #32011E;
+    --light: #f2efef;
+    --dark: #020202;
 }
 
 .custprimary{

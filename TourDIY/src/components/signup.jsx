@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function SignUp () {
+const Signup = React.forwardRef((props, ref) => {
     return(
-        <>
-        <p>signup</p>
-        </>
+        <div ref={ref} className='section' id='signup'>
+            <h1>Sign Up</h1>
+        </div>
     )
-}
+})
+
+export default Signup

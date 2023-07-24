@@ -1,0 +1,47 @@
+
+.navCont {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar{
+    height: 10vh;        
+}
+
+.nav-link{
+    color: var(--light);
+}
+.nav-link:hover{
+    color: #BC915F;
+    font-weight: 500;
+}
+
+.navbar-brand{
+    color: var(--light);
+    font-size: 25px;   
+    font-family: Fjalla One;
+}
+.navbar-brand:hover {
+    color: #BC915F;
+}
+
+.navbar-toggler{
+    border: none;
+    color: #BC915F;
+}
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(242, 239, 239, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3e%3c/svg%3e");
+}
+
+.btn{
+    margin: 3px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 200;
+} 
+
+.btn:hover{
+    background-color: #BC915F;
+    border: none;
+}

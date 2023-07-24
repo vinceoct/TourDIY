@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Venues () {
+const Venues = React.forwardRef((props, ref) => {
     return(
-        <div id='venues'>
-            <p>venues</p>
+        <div ref={ref} className='section' id='venues'>
+            <h1>Venues</h1>
         </div>
     )
-}
+})
+
+export default Venues

@@ -1,9 +1,11 @@
 import React from 'react'
 import '../css/custom-bootstrap-colors.css'
-export default function Bands () {
+const Bands = React.forwardRef((props, ref) => {
     return(
-        <div id='bands'>
-            <h1>bands</h1>
+        <div ref={ref} className='section' id='bands'>
+            <h1>Bands</h1>
         </div>
     )
-}
+})
+
+export default Bands
