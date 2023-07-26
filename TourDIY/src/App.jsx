@@ -9,7 +9,7 @@ import './css/main.css'
 // import './css/footer.css'
 import Nav from './components/topnav'
 import Home from './components/home'
-import Bands from './components/bands'
+import Artists from './components/artist'
 // import BandPage from './bandpage'
 import Venues from './components/venues'
 // import VenuePage from './venuepage'
@@ -21,7 +21,7 @@ function App() {
   const homeRef = useRef(null)
   const signupRef = useRef(null) 
   const venuesRef = useRef(null)
-  const bandsRef = useRef(null)
+  const artistRef = useRef(null)
     
   const scrollToSection = (elementRef) => {
       if (elementRef && elementRef.current) {
@@ -37,7 +37,7 @@ function App() {
                 scrollToSection(venuesRef)
                 break
             case 'bands':
-                scrollToSection(bandsRef)
+                scrollToSection(artistRef)
                 break
             case 'signup':
                 scrollToSection(signupRef)
@@ -49,13 +49,13 @@ function App() {
   return(
     <div className='app'>
       <div className='navCont'>
-        <Nav scrollToSection={scrollToSection} scrollOnClick={scrollOnClick} homeRef={homeRef} venuesRef={venuesRef} bandsRef={bandsRef} signupRef={signupRef}/>
+        <Nav scrollToSection={scrollToSection} scrollOnClick={scrollOnClick} homeRef={homeRef} venuesRef={venuesRef} artistRef={artistRef} signupRef={signupRef}/>
       </div>
       <div className='main'>
         <Home ref={homeRef} scrollOnClick={scrollOnClick} signupRef={signupRef} />
         <SignUp ref={signupRef} /> 
         <Venues ref={venuesRef} />
-        <Bands ref={bandsRef}/> 
+        <Artists ref={artistRef}/> 
       </div>       
     </div>
     )

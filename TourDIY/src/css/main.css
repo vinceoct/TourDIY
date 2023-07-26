@@ -16,7 +16,7 @@
     color: #000
 }
 
-#signup, #login, #bands{
+#signup, #login, #artists{
     background: linear-gradient(225deg, #838c93, #9ca7ae);
     color: var(--dark);
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/custom-bootstrap-colors.css'
 const Bands = React.forwardRef((props, ref) => {
     return(
-        <div ref={ref} className='section' id='bands'>
+        <div ref={ref} className='section' id='artists'>
             <h1>Bands</h1>
         </div>
     )
