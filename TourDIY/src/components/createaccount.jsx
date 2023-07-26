@@ -67,7 +67,7 @@ const CreateAccount = () => {
         return
     }
     try {
-        const response = await axios.post(`localhost:3001/api/artists`, {
+        const response = await axios.post(`http://localhost:3001/api/auth/signup`, {
         name: artistnameInput,
         genre: genreInput,
         city: cityInput,
@@ -80,7 +80,7 @@ const CreateAccount = () => {
         email: emailInput,
         password: passwordInput,     
     })
-    console.log(response.data)
+    console.log(artistnameInput, genreInput, cityInput, selectedState, twitterInput, instagramInput, spotifyInput, bandcampInput, soundcloudInput)
     setSuccess(true)
     } catch (err) {
          if (!err?.response) {

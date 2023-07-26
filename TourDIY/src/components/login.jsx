@@ -1,9 +1,67 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../context/authprovider';
 
-export default function Login () {
-    return(
-        <div className='section'>
-        <p>login</p>
-        </div>
-    )
-}
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const { login, logout } = useContext(AuthContext)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3001/api/auth/login", { email, password });
+      const { token } = response.data;
+      
+      localStorage.setItem('token', token)
+      localStorage.setItem('email', email)
+
+      login({ email })
+    } catch (error) {
+      if (error.response) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage("An error occurred during login.");
+      }
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('email') 
+    logout(); 
+  };
+
+  return (
+    <div className="login-page">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+            <div className="form-group row">
+                <label htmlFor="emaillogin" className="col-4 col-form-label">Email</label> 
+                <div className="col-8">
+                <input id="emaillogin" name="emaillogin" type="text" required className="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                </div>
+            </div>
+            <div className="form-group row">
+                <label htmlFor="passwordlogin" className="col-4 col-form-label">Password</label> 
+                <div className="col-8">
+                <input id="passwordlogin" name="passwordlogin" type="password" className="form-control" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+            </div> 
+            <div className="form-group row">
+                <div className="offset-4 col-8">
+                <button name="submit" type="submit" className="btn custsecondary">Submit</button>
+                </div>
+            </div>
+        </form> 
+        <button name="logout" onClick={handleLogout} className="btn custsecondary">Logout</button>
+        {errorMessage && <div className="error-message">{errorMessage}</div>} 
+      </div>
+    </div>
+  );
+};
+
+export default Login;
