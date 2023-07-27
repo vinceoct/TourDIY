@@ -15,7 +15,7 @@ import Venues from './components/venues'
 // import VenuePage from './venuepage'
 // import Login from './login'
 // import Account from './account'
-import SignUp from './components/signup'
+import SignUp from './components/profile'
 
 function App() {
   const homeRef = useRef(null)
@@ -53,9 +53,9 @@ function App() {
       </div>
       <div className='main'>
         <Home ref={homeRef} scrollOnClick={scrollOnClick} signupRef={signupRef} />
-        <SignUp ref={signupRef} /> 
-        <Venues ref={venuesRef} />
-        <Artists ref={artistRef}/> 
+        <SignUp ref={signupRef} scrollOnClick={scrollOnClick} /> 
+        <Venues ref={venuesRef} scrollOnClick={scrollOnClick} />
+        <Artists ref={artistRef} scrollOnClick={scrollOnClick}/> 
       </div>       
     </div>
     )

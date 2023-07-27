@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
 import { AuthContext } from '../context/authprovider';
 
 const Login = () => {
@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="form-container">
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <div className="form-group row">
                 <label htmlFor="emaillogin" className="col-4 col-form-label">Email</label> 
                 <div className="col-8">
@@ -56,8 +56,7 @@ const Login = () => {
                 <button name="submit" type="submit" className="btn custsecondary">Submit</button>
                 </div>
             </div>
-        </form> 
-        <button name="logout" onClick={handleLogout} className="btn custsecondary">Logout</button>
+        </Form> 
         {errorMessage && <div className="error-message">{errorMessage}</div>} 
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
 import axios from 'axios'
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
@@ -107,7 +107,7 @@ return (
               <section>
                 <p ref={errRef} className={errorMessage ? "errorMessage" : "offscreen"} aria-live="assertive">{errorMessage}</p>
               </section>
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
         <div class="form-group row">
             <label for="artistname" class="col-4 col-form-label">Artist/Band Name</label> 
                 <div class="col-8">
@@ -189,7 +189,7 @@ return (
                 <button disabled={!validPassword || !validConfirmedPassword ? true : false} name="submit" type="submit" class="btn custsecondary">Sign Up</button>
             </div>
         </div>
-    </form>
+    </Form>
     
 </section>
             )

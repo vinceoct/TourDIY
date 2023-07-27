@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Card, Button, Row, Col } from 'react-bootstrap/'
 import '../css/custom-bootstrap-colors.css'
-import van from '../assets/van.png'
+
 
 const Home = React.forwardRef((props, ref) => {
   
