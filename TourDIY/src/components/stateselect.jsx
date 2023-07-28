@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Button, Row, Col } from 'react-bootstrap/'
+import { Container, Card, Button, Row, Col, Form } from 'react-bootstrap/'
 import axios from 'axios';
 
 const StateSelect = ({ onSelectState }) => {
@@ -29,15 +29,18 @@ const StateSelect = ({ onSelectState }) => {
 
   return (
     <div>
-      <label htmlFor="stateSelect">State:</label>
-      <select id="stateSelect" value={selectedState} onChange={handleStateChange}>
-        <option value="">Select a State</option>
-        {states.map(state => (
-          <option key={state.abbrev} value={state.abbrev}>
-            {state.name}
-          </option>
-        ))}
-      </select>
+      <Form>
+        <Form.Group controlId="stateSelect">
+          <Form.Select className='custprimary' value={selectedState} onChange={handleStateChange}>
+            <option value="">Select a State</option>
+            {states.map((state) => (
+              <option key={state.abbrev} value={state.abbrev}>
+                {state.name}
+              </option>
+            ))}
+          </Form.Select>
+        </Form.Group>
+      </Form>
     </div>
   );
 };

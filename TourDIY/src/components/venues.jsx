@@ -21,7 +21,7 @@ const Venues = React.forwardRef((props, ref) => {
     return(
         <div ref={ref} className='section' id='venues'>
           {loggedIn ? (
-          <div id='venues'>
+          <div>
             <h1>Venues</h1>
             <StateSelect onSelectState={handleSelectState}/>
             {selectedState && (

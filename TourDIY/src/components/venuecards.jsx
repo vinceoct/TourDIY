@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Col, Row, Container, Button, Card } from 'react-bootstrap'
 import axios from 'axios'
 
-const VenueSelect = ({ selectedState, selectedCity }) => {
+const VenueCards = ({ selectedState, selectedCity }) => {
   const [venues, setVenues] = useState([]);
 
   useEffect(() => {
@@ -19,15 +20,24 @@ const getVenues = async () => {
     }
   }
   return (
-    <div>
-        {venues.map(venue => (
-          <div>
-            <h3>{venue.name}</h3>
-            <p>{venue.city},{venue.state}</p>
-          </div>
+    <Container>
+      
+        {venues.map((venue) => (
+          <Col key={venue.name} md={4} className="mb-3">
+            <Card>
+              <Card.Body>
+                <Card.Title>{venue.name}</Card.Title>
+                <Card.Text>
+                  {venue.city}, {venue.state}
+                </Card.Text>
+                <Button variant="primary">More Info</Button>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-    </div>
+      
+    </Container>
   );
 };
 
-export default VenueSelect;
+export default VenueCards;
