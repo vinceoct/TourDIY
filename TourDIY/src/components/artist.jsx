@@ -19,7 +19,7 @@ const Bands = React.forwardRef((props, ref) => {
     setSelectedCity(cityValue)
   }
     return(
-        <div ref={ref} className='section' id='venues'>
+        <div ref={ref} className='section' id='artists'>
           {loggedIn ? (
           <div>
             <h1>Bands</h1>

@@ -22,18 +22,13 @@ const getVenues = async () => {
   return (
     <Container>
       
-        {venues.map((venue) => (
-          <Col key={venue.name} md={4} className="mb-3">
-            <Card>
+        {venues.map((venue) => (    
+            <Card className='m-3'>
               <Card.Body>
                 <Card.Title>{venue.name}</Card.Title>
-                <Card.Text>
-                  {venue.city}, {venue.state}
-                </Card.Text>
-                <Button variant="primary">More Info</Button>
+                <Button className='custsecondary'>More Info</Button>
               </Card.Body>
-            </Card>
-          </Col>
+            </Card>         
         ))}
       
     </Container>

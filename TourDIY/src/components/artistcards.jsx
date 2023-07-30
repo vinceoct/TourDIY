@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import axios from 'axios'
 
 const ArtistCards = ({ selectedState, selectedCity }) => {
@@ -22,11 +22,13 @@ const getArtists = async () => {
   return (
     <div>
         {artists.map(artist => (
-          <div>
-            <h3>{artist.name}</h3>
-            <p>{artist.genre}</p>
-            <Button className='custsecondary '>View Profile</Button>
-          </div>
+          <Card className='m-3'>
+              <Card.Body>
+                <Card.Title>{artist.name}</Card.Title>
+                <Card.Text>{artist.genre}</Card.Text>
+                <Button className='custsecondary'>More Info</Button>
+              </Card.Body>
+            </Card>   
         ))}
     </div>
   );

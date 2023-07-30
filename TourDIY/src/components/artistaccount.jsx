@@ -4,24 +4,31 @@ import { AuthContext } from '../context/authprovider';
 import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
 export default function ArtistAccount () {
   const { logout, user } = useContext(AuthContext);
-  const [userData, setUserData] = useState(null)
   console.log(user)
   console.log(user.email)
   const handleLogout = () => {
       logout();
   };
 
-  useEffect(()=> {
-        const getProfilePage = async () => {
+  const getProfilePage = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/api/artists/${user.email}`)
                 const data = response.data
-                
-                setUserData(data)
+                setEmail(data.email);
+                setName(data.name);
+                setGenre(data.genre);
+                setCity(data.city);
+                setState(data.state);
+                setTwitter(data.twitter);
+                setInstagram(data.instagram);
+                setSpotify(data.spotify);
+                setBandcamp(data.bandcamp);
+                setSoundcloud(data.soundcloud);
             } catch (error) {
                 console.error('Error fetching user', error)
             }
         }
+  useEffect(()=> {
         if (user.email) {
         getProfilePage()
         }
@@ -70,91 +77,224 @@ export default function ArtistAccount () {
         }
     }
 
-  return (
-    <div className='section'>
-      <div className='accountinfo'>
-                <p><strong>Name: {name} </strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Name" 
-                 onChange={(e) => setName(e.target.value)}></input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Email: {email} </strong></p>
-                <div className='userupdate'>
-                <input type="email" placeholder="Update Email" onChange={(e) => setEmail(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Genre: {genre} </strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Genre" onChange={(e) => setGenre(e.target.value)}> 
-                </input>
-            <button type="submit" onClick={handleProfileUpdate}>Update</button>
-   
-   </div>         </div>
-            <div className='accountinfo'>
-                <p><strong>City: {user.city} </strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update City" onChange={(e) => setCity(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>State: {user.state}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update State" onChange={(e) => setState(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Twitter: {user.twitter}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Twitter" onChange={(e) => setTwitter(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Instagram: {user.instagram}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Instagram" onChange={(e) => setInstagram(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Spotify: {user.spotify}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Spotify" onChange={(e) => setSpotify(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>Bandcamp: {user.bandcamp}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update Bandcamp" onChange={(e) => setBandcamp(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='accountinfo'>
-                <p><strong>SoundCloud: {user.soundcloud}</strong></p>
-                <div className='userupdate'>
-                <input type="text" placeholder="Update SoundCloud" onChange={(e) => setSoundcloud(e.target.value)}>
-                </input>
-                <button type="submit" onClick={handleProfileUpdate}>Update</button>
-                </div>
-            </div>
-            <div className='userbuttons'>
-                <Button id='deleteaccount'type="button" className='danger' onClick={handleDelete}>Delete Profile</Button>
-                <Button className='custsecondary' onClick={handleLogout}>Logout</Button>
-            </div>
-    </div> )
+ return (
+    <Container className="section">
+      <Card className="accountinfo" style={{height: '80%', width: '80%', border: 'none'}}>
+        <Card.Body>
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Name:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Email:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Genre:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={genre}
+                onChange={(e) => setGenre(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>City:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>State:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Twitter:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={twitter}
+                onChange={(e) => setTwitter(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Instagram:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={instagram}
+                onChange={(e) => setInstagram(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+            <p>
+              <strong>Spotify:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                value={spotify}
+                onChange={(e) => setSpotify(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+              </Button>
+              </Col>
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+             <p>
+              <strong>Bandcamp:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                placeholder="Update Bandcamp"
+                value={bandcamp}
+                onChange={(e) => setBandcamp(e.target.value)}
+            />
+            </Col>
+            <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+                Update
+             </Button>
+          </Col>    
+          </Row>
+
+          <Row className="accountinfo">
+            <Col>
+              <p>
+              <strong>SoundCloud:</strong>
+            </p>
+            </Col>
+            <Col className="userupdate">
+              <Form.Control
+                type="text"
+                onChange={(e) => setSoundcloud(e.target.value)}
+              />
+              </Col>
+              <Col>
+              <Button type="submit" onClick={handleProfileUpdate}>
+              Update
+              </Button>
+              </Col>        
+          </Row>
+
+          <Row>
+            <Col>
+              <Button id="deleteaccount" type="button" variant="danger" onClick={handleDelete}>
+                Delete Profile
+              </Button>
+            </Col>
+            <Col>
+              <Button className="custsecondary" onClick={handleLogout}>
+                Logout
+              </Button>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
 }
