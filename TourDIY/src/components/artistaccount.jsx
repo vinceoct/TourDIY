@@ -45,10 +45,10 @@ export default function ArtistAccount () {
     const [bandcamp, setBandcamp] = useState(user.bandcamp)
     const [soundcloud, setSoundcloud] = useState(user.soundcloud)
     const [success, setSuccess] = useState(false)
-    console.log(email)
+    
     const handleProfileUpdate = async () => {
         try {
-           const response = await axios.put(`https://localhost3001/api/artists/${user.email}}`,
+           const response = await axios.put(`http://localhost:3001/api/artists/${user.email}`,
            {
             name: name,
             genre: genre,
@@ -69,7 +69,7 @@ export default function ArtistAccount () {
 
        const handleDelete = async () => {
         try { 
-            await axios.delete(`https://localhost3001/api/artists/${user.email}`,)
+            await axios.delete(`http://localhost3001/api/artists/${user.email}`,)
             setSuccess(true)
             handleLogout()
         } catch (error) {
@@ -79,9 +79,10 @@ export default function ArtistAccount () {
 
  return (
     <Container className="section">
-      <Card className="accountinfo" style={{height: '80%', width: '80%', border: 'none'}}>
-        <Card.Body>
-          <Row className="accountinfo">
+      <Card className="accountinfo d-flex flex-column justify-content-around" style={{height: '80%', width: '90%', background: 'none', border: 'none'}}>
+        <Card.Title>Account Info</Card.Title>
+        <Card.Body className="d-flex flex-column justify-content-between">
+          <Row className="d-flex flex-row">
             <Col>
             <p>
               <strong>Name:</strong>
@@ -95,7 +96,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -115,7 +116,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -135,7 +136,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -155,7 +156,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -175,7 +176,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -195,7 +196,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -215,7 +216,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -235,7 +236,7 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
@@ -256,7 +257,7 @@ export default function ArtistAccount () {
             />
             </Col>
             <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
                 Update
              </Button>
           </Col>    
@@ -271,11 +272,12 @@ export default function ArtistAccount () {
             <Col className="userupdate">
               <Form.Control
                 type="text"
+                value={soundcloud}
                 onChange={(e) => setSoundcloud(e.target.value)}
               />
               </Col>
               <Col>
-              <Button type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
               Update
               </Button>
               </Col>        

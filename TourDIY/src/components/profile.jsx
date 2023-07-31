@@ -21,10 +21,14 @@ const Signup = React.forwardRef((props, ref) => {
   };
 
   return (
+    
     <div ref={ref} className='section' id='signup'>
-      <Button className='custsecondary' onClick={handleLoginClick}>Login</Button>
-      <Button className='custsecondary' onClick={handleSignUpClick}>Sign Up</Button>
-
+      {!loggedIn && !showCreateAccount && !showLogin && (
+        <>
+          <Button className='custsecondary' onClick={handleLoginClick}>Login</Button>
+          <Button className='custsecondary' onClick={handleSignUpClick}>Sign Up</Button>
+        </>
+      )}
      
       {showLogin && !loggedIn && <Login />}
       {showCreateAccount && !loggedIn && <CreateAccount />}
