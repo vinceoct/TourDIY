@@ -22,18 +22,32 @@ const Venues = React.forwardRef((props, ref) => {
         <div ref={ref} className='section' id='venues'>
           {loggedIn ? (
           <div>
-            <h1>Venues</h1>
-            <StateSelect onSelectState={handleSelectState}/>
-            {selectedState && (
-            <CitySelect selectedState={selectedState} onSelectCity={handleSelectCity}/> )}
+            <h1>Find Venues</h1>
+            <Row>
+              <Col>
+                <StateSelect onSelectState={handleSelectState}/>
+              </Col> 
+              <Col>
+                {selectedState && (
+                <CitySelect selectedState={selectedState} onSelectCity={handleSelectCity}/> )}
+              </Col>
+            </Row>
             {selectedState && selectedCity && (
             <VenueCards selectedState={selectedState} selectedCity={selectedCity}/>)}
           </div>
         ) : (
-          <>
-            <h1>Please Login or Sign Up</h1>
-            <Button onClick={() => props.scrollOnClick('signup')} className='custsecondary'>Back</Button>
-          </>
+          <Container className='text-center'>
+            <Row>
+              <Col>
+                <h1>Please Login or Sign Up.</h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Button onClick={() => props.scrollOnClick('signup')} className='custsecondary'>Back</Button>
+              </Col>
+            </Row>
+          </Container>
         )}
         </div>
     )

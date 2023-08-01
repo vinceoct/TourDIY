@@ -19,3 +19,11 @@
         color: var(--light);
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    background-color: #624d97
+}

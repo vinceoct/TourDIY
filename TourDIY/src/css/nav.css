@@ -19,8 +19,8 @@
 
 .navbar-brand{
     color: var(--light);
-    font-size: 25px;   
-    font-family: Fjalla One;
+    font-size: 40px;   
+    font-family: Unbounded;
 }
 .navbar-brand:hover {
     color: #BC915F;

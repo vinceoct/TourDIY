@@ -10,10 +10,10 @@ const Home = React.forwardRef((props, ref) => {
         <Container ref={ref} id='home' className='d-flex justify-content-center align-items-center section' style={{ minHeight: '100%'}}>
            <Card className='homeCard'style={{ width: '80%', border: 'none', background: 'transparent', textAlign: 'center'}}>
                     <Card.Body>
-                    <Card.Title>You Don't Have to Do it ALL Yourself</Card.Title>
-                    <Card.Text>
+                    <h1>You Don't Have to Do it ALL Yourself</h1>
+                    <h5>
                         Welcome to TourDIY - a community driven database of bands and venues.   
-                    </Card.Text>
+                    </h5>
                     <Button onClick={() => props.scrollOnClick('signup')} className="custsecondary">Get Started</Button>
                 </Card.Body>
             </Card>            

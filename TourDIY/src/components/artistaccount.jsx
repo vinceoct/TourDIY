@@ -78,17 +78,17 @@ export default function ArtistAccount () {
     }
 
  return (
-    <Container className="section">
+    <Container className="section d-flex flex-column justify-content-center">
       <Card className="accountinfo d-flex flex-column justify-content-around" style={{height: '80%', width: '90%', background: 'none', border: 'none'}}>
-        <Card.Title>Account Info</Card.Title>
+        <Card.Title className='text-center' style={{fontSize: '30px'}}>Account</Card.Title>
         <Card.Body className="d-flex flex-column justify-content-between">
           <Row className="d-flex flex-row">
-            <Col>
+            <Col md={2} className='align-items-center'>
             <p>
               <strong>Name:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={name}
@@ -96,19 +96,19 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>Email:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="email"
                 value={email}
@@ -116,19 +116,19 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>Genre:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={genre}
@@ -136,19 +136,19 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>City:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8}className="userupdate">
               <Form.Control
                 type="text"
                 value={city}
@@ -156,39 +156,39 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>State:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8}className="userupdate">
               <Form.Control
                 type="text"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
               />
               </Col>
-              <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Col> 
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>Twitter:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={twitter}
@@ -196,39 +196,39 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>Instagram:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={instagram}
                 onChange={(e) => setInstagram(e.target.value)}
               />
               </Col>
-              <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Col >
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
             <p>
               <strong>Spotify:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={spotify}
@@ -236,19 +236,19 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
               </Col>
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
              <p>
               <strong>Bandcamp:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 placeholder="Update Bandcamp"
@@ -257,19 +257,19 @@ export default function ArtistAccount () {
             />
             </Col>
             <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
              </Button>
           </Col>    
           </Row>
 
           <Row className="accountinfo">
-            <Col>
+            <Col md={2}>
               <p>
               <strong>SoundCloud:</strong>
             </p>
             </Col>
-            <Col className="userupdate">
+            <Col md={8} className="userupdate">
               <Form.Control
                 type="text"
                 value={soundcloud}
@@ -277,19 +277,19 @@ export default function ArtistAccount () {
               />
               </Col>
               <Col>
-              <Button className="custsecondary" type="submit" onClick={handleProfileUpdate}>
+              <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
               Update
               </Button>
               </Col>        
           </Row>
 
           <Row>
-            <Col>
-              <Button id="deleteaccount" type="button" variant="danger" onClick={handleDelete}>
+            <Col className='text-center'>
+              <Button type="button" variant="danger" onClick={handleDelete}>
                 Delete Profile
               </Button>
             </Col>
-            <Col>
+            <Col className='text-center'>
               <Button className="custsecondary" onClick={handleLogout}>
                 Logout
               </Button>
