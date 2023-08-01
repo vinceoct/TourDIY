@@ -141,11 +141,11 @@ return (
         <div class="form-group row">
             <label for="state" class="col-4 col-form-label">State</label> 
                 <div class="col-8">
-                    <select id="state" name="state" required="required" class="custom-select"  value={selectedState} onChange={(e) => setSelectedState(e.target.value)}><option value="">Select a State</option>
+                    <Form.Select id="state" name="state" required="required" class="custom-select"  value={selectedState} onChange={(e) => setSelectedState(e.target.value)}><option value="">Select a State</option>
         {states.map(state => (
           <option key={state.abbrev} value={state.abbrev}>
             {state.name}
-          </option>))}</select>
+          </option>))}</Form.Select>
                 </div>
         </div>
         <div class="form-group row">
@@ -157,13 +157,13 @@ return (
         <div class="form-group row">
             <label for="twitter" class="col-4 col-form-label">Twitter</label> 
                 <div class="col-8">
-                    <input id="twitter" value={twitterInput} onChange={(e) => setTwitter(e.target.value)} name="twitter" placeholder="@" type="text" class="form-control"/>
+                    <input id="twitter" value={twitterInput} onChange={(e) => setTwitter(e.target.value)} name="twitter" placeholder="link to your twitter" type="text" class="form-control"/>
                 </div>
         </div>
         <div class="form-group row">
             <label for="instagram" class="col-4 col-form-label">Instagram</label> 
                 <div class="col-8">
-                    <input id="instagram" value={instagramInput} onChange={(e) => setInstagram(e.target.value)} name="instagram" placeholder="@" type="text" class="form-control"/>
+                    <input id="instagram" value={instagramInput} onChange={(e) => setInstagram(e.target.value)} name="instagram" placeholder="link to your instagram" type="text" class="form-control"/>
                 </div>
         </div>
         <div class="form-group row">

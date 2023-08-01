@@ -5,7 +5,6 @@ import instagram from '../assets/instagram.png'
 
 const VenueCards = ({ selectedState, selectedCity }) => {
   const [venues, setVenues] = useState([]);
-  const [flippedCardIndex, setFlippedCardIndex] = useState(null);
 
   useEffect(() => {
     getvenues(selectedState, selectedCity).then((data) => setVenues(data));
@@ -23,39 +22,21 @@ const VenueCards = ({ selectedState, selectedCity }) => {
     }
   };
 
-  const handleFlip = (index) => {
-    setFlippedCardIndex(index === flippedCardIndex ? null : index);
-  };
-
   return (
     <div>
       {venues.map((venue, index) => (
         <div
           key={venue.id}
-          className={`m-3 venue-card ${flippedCardIndex === index ? 'flipped' : ''}`}
+          className={`m-3 venue-card`}
         >
           <div className="card-front">
             <Card>
               <Card.Body>
                 <Card.Title>{venue.name}</Card.Title>
                 <Card.Text></Card.Text>
-                <Button className="custsecondary" onClick={() => handleFlip(index)}>
-                  More Info
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="card-back">
-            <Card>
-              <Card.Body>
-                <Card.Title>{venue.name}</Card.Title>
-                <Card.Text>Listen & Connect:</Card.Text>
-                <Row> 
-                </Row>
-                <Button className="custsecondary" onClick={() => handleFlip(index)}>
-                  Go Back
-                </Button>
+                <a href={venue.website} ><Button className="custsecondary" onClick={() => handleFlip(index)}>
+                  Visit
+                </Button></a>
               </Card.Body>
             </Card>
           </div>

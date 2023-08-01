@@ -15,13 +15,19 @@
     align-items: center;
     color: #000
 }
-
-#artists, #signup{
+h5{
+    font-family: prompt;
+}
+#signup{
     background-image: url(../assets/haul.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--dark);
 }
 #artists {
     background-image: url(../assets/crowd.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--dark);
 }
 

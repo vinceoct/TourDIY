@@ -21,20 +21,19 @@ const Venues = React.forwardRef((props, ref) => {
     return(
         <div ref={ref} className='section' id='venues'>
           {loggedIn ? (
-          <div>
-            <h1>Find Venues</h1>
+          <Container className='text-center'>
+            <h1>Find Venues.</h1>
             <Row>
               <Col>
                 <StateSelect onSelectState={handleSelectState}/>
               </Col> 
               <Col>
-                {selectedState && (
-                <CitySelect selectedState={selectedState} onSelectCity={handleSelectCity}/> )}
+                <CitySelect selectedState={selectedState} onSelectCity={handleSelectCity}/>
               </Col>
             </Row>
             {selectedState && selectedCity && (
             <VenueCards selectedState={selectedState} selectedCity={selectedCity}/>)}
-          </div>
+          </Container>
         ) : (
           <Container className='text-center'>
             <Row>

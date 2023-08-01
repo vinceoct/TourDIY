@@ -39,7 +39,7 @@ const ArtistCards = ({ selectedState, selectedCity }) => {
           className={`m-3 artist-card ${flippedCardIndex === index ? 'flipped' : ''}`}
         >
           <div className="card-front">
-            <Card>
+            <Card className='text-center'> 
               <Card.Body>
                 <Card.Title>{artist.name}</Card.Title>
                 <Card.Text>{artist.genre}</Card.Text>
@@ -51,16 +51,16 @@ const ArtistCards = ({ selectedState, selectedCity }) => {
           </div>
 
           <div className="card-back">
-            <Card>
+            <Card className='text-center'>
               <Card.Body>
                 <Card.Title>{artist.name}</Card.Title>
-                <Card.Text>Listen & Connect:</Card.Text>
+                <Card.Text className='mb-0'>Connect & Listen:</Card.Text>
                 <Row> 
-                    <Col> <a href={artist.instagram} target="_blank"><Card.Img src={instagram} style={{width: '48px'}}/></a></Col>
-                    <Col> <a href={artist.twitter} target="_blank"><Card.Img src={twitter} style={{width: '48px'}}/></a></Col>
-                    <Col> <a href={artist.spotify} target="_blank"><Card.Img src={spotify}style={{width: '48px'}}/></a></Col>
-                    <Col> <a href={artist.bandcamp} target="_blank"><Card.Img src={bandcamp} style={{width: '48px'}}/></a></Col>
-                    <Col> <a href={artist.soundcloud} target="_blank"><Card.Img src={soundcloud} style={{width: '48px'}}/></a></Col>
+                    <Col md={2}> <a href={artist.instagram} target="_blank"><Card.Img src={instagram} style={{width: '48px'}}/></a></Col>
+                    <Col md={2}> <a href={artist.twitter} target="_blank"><Card.Img src={twitter} style={{width: '48px'}}/></a></Col>
+                    <Col md={2}> <a href={artist.spotify} target="_blank"><Card.Img src={spotify}style={{width: '48px'}}/></a></Col>
+                    <Col md={2}> <a href={artist.bandcamp} target="_blank"><Card.Img src={bandcamp} style={{width: '48px'}}/></a></Col>
+                    <Col md={2}> <a href={artist.soundcloud} target="_blank"><Card.Img src={soundcloud} style={{width: '48px'}}/></a></Col>
                 </Row>
                 <Button className="custsecondary" onClick={() => handleFlip(index)}>
                   Go Back
