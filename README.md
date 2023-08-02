@@ -1,4 +1,6 @@
 # TourDIY
+
+<p align=center><img src='https://github.com/vinceoct/TourDIY/blob/main/TourDIY/src/assets/tourdiy.gif'/></p>
 TourDIY is a full-stack web application designed to simplify the process of booking tours for artists and bands across the U.S. The app utilizes the PERN stack (PostgreSQL, Express, React, and Node.js), Sequelize as the ORM (Object-Relational Mapping) library, and Bootstrap for responsive and user-friendly frontend design. With BandVenueFinder, artists and bands can sign up or log in to explore local venues and bands in different cities, making the tour booking process more efficient and seamless.
 
 ## Features
