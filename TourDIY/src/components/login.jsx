@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
-import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
+import { Form } from 'react-bootstrap/'
 import { AuthContext } from '../context/authprovider';
 
 const Login = () => {

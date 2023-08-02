@@ -32,7 +32,7 @@ const ArtistCards = ({ selectedState, selectedCity }) => {
   };
 
   return (
-    <div>
+    <>
       {artists.map((artist, index) => (
         <div
           key={artist.id}
@@ -70,7 +70,7 @@ const ArtistCards = ({ selectedState, selectedCity }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
+import { Form } from 'react-bootstrap/'
 import axios from 'axios'
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
@@ -98,9 +98,6 @@ return (
     {success ? (
                 <section>
                     <h1>Account successfully created.</h1>
-                    <p>
-                    {/* <Link className="login" to="/login"><button id="already-have-account" className="submit-button">Log in.</button></Link>  */}
-                    </p>
                 </section>
             ) : (
             <section className='form-container'>

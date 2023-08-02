@@ -1,20 +1,13 @@
-
-import { Route, Routes } from 'react-router-dom'
 import React, { useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './css/custom-bootstrap-colors.css'
+import './css/custbootstrap.css'
 import './css/App.css'
 import './css/nav.css'
 import './css/main.css'
-// import './css/footer.css'
 import Nav from './components/topnav'
 import Home from './components/home'
 import Artists from './components/artist'
-// import BandPage from './bandpage'
 import Venues from './components/venues'
-// import VenuePage from './venuepage'
-// import Login from './login'
-// import Account from './account'
 import SignUp from './components/profile'
 
 function App() {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Row, Col } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import axios from 'axios'
-import instagram from '../assets/instagram.png'
 
 const VenueCards = ({ selectedState, selectedCity }) => {
   const [venues, setVenues] = useState([]);
@@ -23,7 +22,7 @@ const VenueCards = ({ selectedState, selectedCity }) => {
   };
 
   return (
-    <div>
+    <>
       {venues.map((venue, index) => (
         <div
           key={venue.id}
@@ -33,8 +32,7 @@ const VenueCards = ({ selectedState, selectedCity }) => {
             <Card>
               <Card.Body>
                 <Card.Title>{venue.name}</Card.Title>
-                <Card.Text></Card.Text>
-                <a href={venue.website} ><Button className="custsecondary" onClick={() => handleFlip(index)}>
+                <a href={venue.website} target="_blank"><Button className="custsecondary" onClick={() => handleFlip(index)}>
                   Visit
                 </Button></a>
               </Card.Body>
@@ -42,7 +40,7 @@ const VenueCards = ({ selectedState, selectedCity }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

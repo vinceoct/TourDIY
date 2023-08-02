@@ -1,6 +1,6 @@
-import React, { useState, useContext, useRef } from 'react'
+import React, { useState, useContext } from 'react'
 import { AuthContext } from '../context/authprovider'
-import { Container, Card, Button, Row, Col } from 'react-bootstrap/'
+import { Container, Button, Row, Col } from 'react-bootstrap/'
 import StateSelect from './stateselect'
 import CitySelect from './cityselect'
 import VenueCards from './venuecards'

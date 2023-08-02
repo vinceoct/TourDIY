@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/authprovider';
 import { Form, Container, Card, Button, Row, Col } from 'react-bootstrap/'
+
 export default function ArtistAccount () {
   const { logout, user } = useContext(AuthContext);
   console.log(user)
@@ -84,9 +85,9 @@ export default function ArtistAccount () {
         <Card.Body className="d-flex flex-column justify-content-between">
           <Row className="d-flex flex-row">
             <Col md={2} className='align-items-center'>
-            <p>
-              <strong>Name:</strong>
-            </p>
+              <p>
+                <strong>Name:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -94,19 +95,19 @@ export default function ArtistAccount () {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>Email:</strong>
-            </p>
+              <p>
+                <strong>Email:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -114,19 +115,19 @@ export default function ArtistAccount () {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>Genre:</strong>
-            </p>
+              <p>
+                <strong>Genre:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -134,19 +135,19 @@ export default function ArtistAccount () {
                 value={genre}
                 onChange={(e) => setGenre(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>City:</strong>
-            </p>
+              <p>
+                <strong>City:</strong>
+              </p>
             </Col>
             <Col md={8}className="userupdate">
               <Form.Control
@@ -154,19 +155,19 @@ export default function ArtistAccount () {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>State:</strong>
-            </p>
+              <p>
+                <strong>State:</strong>
+              </p>
             </Col>
             <Col md={8}className="userupdate">
               <Form.Control
@@ -174,12 +175,12 @@ export default function ArtistAccount () {
                 value={state}
                 onChange={(e) => setState(e.target.value)}
               />
-              </Col>
-              <Col> 
+            </Col>
+            <Col> 
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
@@ -194,19 +195,19 @@ export default function ArtistAccount () {
                 value={twitter}
                 onChange={(e) => setTwitter(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>Instagram:</strong>
-            </p>
+              <p>
+                <strong>Instagram:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -214,19 +215,19 @@ export default function ArtistAccount () {
                 value={instagram}
                 onChange={(e) => setInstagram(e.target.value)}
               />
-              </Col>
-              <Col >
+            </Col>
+            <Col >
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-            <p>
-              <strong>Spotify:</strong>
-            </p>
+              <p>
+                <strong>Spotify:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -234,19 +235,19 @@ export default function ArtistAccount () {
                 value={spotify}
                 onChange={(e) => setSpotify(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
               </Button>
-              </Col>
+            </Col>
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
-             <p>
-              <strong>Bandcamp:</strong>
-            </p>
+              <p>
+                <strong>Bandcamp:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -260,14 +261,14 @@ export default function ArtistAccount () {
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
                 Update
              </Button>
-          </Col>    
+            </Col>    
           </Row>
 
           <Row className="accountinfo">
             <Col md={2}>
               <p>
-              <strong>SoundCloud:</strong>
-            </p>
+                <strong>SoundCloud:</strong>
+              </p>
             </Col>
             <Col md={8} className="userupdate">
               <Form.Control
@@ -275,12 +276,12 @@ export default function ArtistAccount () {
                 value={soundcloud}
                 onChange={(e) => setSoundcloud(e.target.value)}
               />
-              </Col>
-              <Col>
+            </Col>
+            <Col>
               <Button className="custsecondary" type="submit" style={{width: '100%'}} onClick={handleProfileUpdate}>
               Update
               </Button>
-              </Col>        
+            </Col>        
           </Row>
 
           <Row>

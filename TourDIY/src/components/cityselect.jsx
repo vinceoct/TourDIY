@@ -29,7 +29,7 @@ const CitySelect = ({ selectedState, onSelectCity }) => {
   };
 
   return (
-    <div>
+    <>
       <Form>
         <Form.Group controlId="citySelect">
           <Form.Select className='custprimary' value={selectedCity} onChange={handleCityChange}>
@@ -46,7 +46,7 @@ const CitySelect = ({ selectedState, onSelectCity }) => {
           </Form.Select>
         </Form.Group>
       </Form>
-    </div>
+    </>
   );
 };
 

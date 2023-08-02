@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Button, Row, Col, Form } from 'react-bootstrap/'
+import { Form } from 'react-bootstrap/'
 import axios from 'axios';
 
 const StateSelect = ({ onSelectState }) => {
@@ -28,7 +28,7 @@ const StateSelect = ({ onSelectState }) => {
   }
 
   return (
-    <div>
+    <>
       <Form>
         <Form.Group controlId="stateSelect">
           <Form.Select className='custprimary' value={selectedState} onChange={handleStateChange}>
@@ -41,7 +41,7 @@ const StateSelect = ({ onSelectState }) => {
           </Form.Select>
         </Form.Group>
       </Form>
-    </div>
+    </>
   );
 };
 

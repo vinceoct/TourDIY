@@ -3,7 +3,7 @@ import CreateAccount from './createaccount';
 import Login from './login';
 import ArtistAccount from './artistaccount';
 import { AuthContext } from '../context/authprovider';
-import { Container, Card, Button, Row, Col } from 'react-bootstrap/'
+import { Button } from 'react-bootstrap/'
 
 const Signup = React.forwardRef((props, ref) => {
   const [showLogin, setShowLogin] = useState(false);
